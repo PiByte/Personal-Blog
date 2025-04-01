@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Tech Blog Name</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container">
+            <h1 class="blog-title"><a href="/">PI_BYTE<span class="cursor">_</span></a></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" onclick="document.querySelector('.avatar').style.transition = 'transform 1s'; 
+                                             document.querySelector('.avatar').style.transform = `rotate(${(parseInt(document.querySelector('.avatar').dataset.rotation || 0) + 360)}deg)`;
+                                             document.querySelector('.avatar').dataset.rotation = parseInt(document.querySelector('.avatar').dataset.rotation || 0 ) + 90; 
+                                             return false;">Home</a></li>
+                    <li><a href="#about-section" id="about-link" onclick="
+                        document.querySelectorAll('.post-title a').forEach(title => {title.style.color = '#e63946';});
+                        document.querySelectorAll('.widget-title').forEach(title => {title.style.color = '#ccc';});
+                        setTimeout(() => 
+                        {document.querySelectorAll('.post-title a').forEach(title => {title.style.color = '';});
+                         document.querySelectorAll('.widget-title').forEach(title => {title.style.color = '';});}, 1000); return false;">About</a></li>
+                    <li><a href="#" onclick="
+                        document.querySelectorAll('.Resume ul li p').forEach((skill, index) => {
+                            setTimeout(() => { skill.style.color = '#e63946'; }, index * 100);
+                            setTimeout(() => { skill.style.color = ''; }, (index + 1) * 100);
+                        });
+                        document.querySelectorAll('.passions ul li p').forEach((passion, index) => {
+                            setTimeout(() => { passion.style.color = '#e63946'; }, index * 100);
+                            setTimeout(() => { passion.style.color = ''; }, (index + 1) * 100);
+                        });
+                        return false;">Resume</a></li>
+                    <li><a href="#footer" onclick="
+                        document.querySelectorAll('.social-links a i').forEach(icon => {icon.style.color = '#e63946';});
+                        setTimeout(() => {
+                            document.querySelectorAll('.social-links a i').forEach(icon => {icon.style.color = '';});
+                        }, 1000);
+                        document.querySelector('footer').scrollIntoView({ behavior: 'smooth' });
+                        return false;">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-content container">
+
+        <main class="content-area">
+            <article class="blog-post">
+                <header class="post-header">
+                    <h2 class="post-title"><a href="#">Introducing Myself</a></h2>
+                    <p class="post-meta">
+                        Published on <time datetime="2025-04-01">April 1, 2025</time> by <a href="#">payambijeh</a> in <a href="#">his personal weblog.</a>
+                    </p>
+                </header>
+                <div class="post-content">
+                    <p>
+                        I'm Payam Bijeh, a 20-year-old student at Arak University, passionate about learning deep computer concepts such as algorithms and architectures, I'm also lnterested in hardware and cybersecutiry, but I mainly study them out of curiosity and these aren't my professional fields.
+Right now I'm focusing on Python as my primary programming language and working with the Django framework for back-end development. I'm also iterested in automation and developing tools using the python-telegram-bot library.
+As a future full-stack developer, I know I need to understand front-end development so I designed this weblog as my first project.
+while working on thiese projects, I got familiar with Git and Github, which was a great experience, I actually love Git and how simple and powerful it is, (not Github, though!).
+I spend several hours a day working on my computer, and since I also manage a tech channel on Telegram, I wanted to improve my typing speed. So I started learning 10-finger typing. As expected, I was very slow at first but after three months of consistent practice (about 30 minutes each day), I reached 60 word per minute, which I consider a good achievement.
+Also worth mentioning, I'm now one of the community leaders of CS12, where juniors gathre, learn and grow together to grow. We are just at the beginnig of something great!
+                    <button class="like-button" onclick="alert('Love is the only free but worthy entity!, ThankYou')">
+                        <i class="far fa-heart"></i> Like
+                    </button>
+                </div>
+            </article>
+
+            <article class="blog-post">
+                <header class="post-header">
+                    <h2 class="post-title"><a href="#">Now Know Me More</a></h2>
+                    <p class="post-meta">
+                        Published on <time datetime="2025-04-1">April 1, 2025</time> by <a href="#">payambijeh</a> in <a href="#">his personal weblog</a>
+                    </p>
+                </header>
+                <div class="post-content">
+                    <p>
+                        Who Am I?
+I’m Payam—just another tech enthusiast who prefers efficiency over nonsense and logic over luck. I build things, break things, and rebuild them better. My interests? C++, Python, Qt, Linux, automation, and cybersecurity—basically, anything that gives me full control over a system. No Fluff. No Sugarcoating. Just Tech.
+I don’t do unnecessary intros, filler text, or marketing nonsense. Everything here is straight to the point, just like the way I code. If that’s your vibe, stick around. If not, well... the back button is right there.
+
+Welcome to my world.
+                    </p>
+                    <pre><code class="language-python">
+int j; # a declaration of personality
+                    </code></pre>
+                    
+                    <button class="like-button" onclick="alert('Love is the only free but worthy entity!, ThankYou')">
+                        <i class="far fa-heart"></i> Like
+                    </button>
+                </div>
+            </article>
+
+            </main>
+
+        <aside class="sidebar">
+            <section class="widget about-me">
+                <h3 class="widget-title">-/ About Me</h3>
+                <img src="images/photo_2025-03-06_11-18-26.jpg" alt="Your Avatar" class="avatar"> 
+                <p>Just a 20 year old geek boy with backend programming experience, a lot of ideas and not enough coffee.</p>
+            </section>
+
+            <section class="widget Resume">
+                <h3 class="widget-title">-/ Skills</h3>
+                <ul>
+                    <li><p>Pythonic Programming</p></li>
+                    <li><p>Telegram-bot Development</p></li>
+                    <li><p>Django Backend</p></li>
+                    <li><p>C & C++ Languages</p></li>
+                    <li><p>Git & Github</p></li>
+                    <li><p>Html & CSS</p></li>
+                    <li><p>Markdown</p></li>
+                    <li><p>10-finger-typing(60 wpm)</p></li>
+                </ul>
+            </section>
+
+            <section class="widget passions">
+                <h3 class="widget-title">-/ Passions</h3>
+                <ul>
+                    <li><p>Community Lead in CS12</p></li>
+                    <li><p>Become a FullStack developer</p></li>
+                    <li><p>Learning python deeply</p></li>
+                    <li><p>Launch my own business</p></li>
+                </ul>
+            </section>
+            
+             <section class="widget social-links">
+                <h3 class="widget-title">-/ Contact</h3>
+                 <a href="https://github.com/PiByte" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+                 <a href="https://t.me/PiByte" aria-label="Telegram" target="_blank"><i class="fab fa-telegram"></i></a>
+                 <a href="https://www.linkedin.com/in/payambijeh" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                 <a href="mailto:Payambijeh1384@email.com" aria-label="Email" target="_blank"><i class="fas fa-envelope"></i></a>
+
+            </section>
+
+        </aside>
+
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 PAYAM BIJEH / PI_BYTE. All Rights Reserved.</p>
+            <p>Powered by pibyte</p>
+        </div>
+    </footer>
+
+</body>
+</html>
